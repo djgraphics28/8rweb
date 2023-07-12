@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('client_name');
             $table->decimal('project_cost', 16);
             $table->string('model_link')->nullable();
-            $table->string('perspective_view')->nullable();
             $table->string('floor_plans')->nullable();
             $table->string('building_permit_number')->nullable();
             $table->string('address_location')->nullable();

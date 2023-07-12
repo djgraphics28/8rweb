@@ -27,6 +27,9 @@
         <div class="content">
             <div class="container-fluid">
                 <section class="content">
+                    <div class="col-md-6">
+                        <input id="image" type="file" name="image" data-max-file-size="2000KB">
+                    </div>
 
                 </section>
             </div><!-- /.container-fluid -->
@@ -34,3 +37,24 @@
         <!-- /.content -->
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        FilePond.registerPlugin(
+            FilePondPluginImagePreview,
+            FilePondPluginFileValidateSize,
+            FilePondPluginFileValidateType
+        );
+        const fileElement = document.querySelector('input[id="image"]');
+        const pond = FilePond.create(fileElement, {
+            acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg'],
+        });
+        FilePond.setOptions({
+            server: {
+                headers: {
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                }
+            }
+        });
+    </script>
+@endpush
