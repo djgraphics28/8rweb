@@ -67,7 +67,11 @@
                                                         <td>{{ $row->name }}</td>
                                                         <td>{{ $row->email }}</td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td>
+                                                            <a href="{{ route('users.show', $row->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                                            <a href="{{ route('users.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                            <a class="btn btn-danger btn-sm" data-confirm-delete="true"><i class="fa fa-trash"></i></a>
+                                                        </td>
                                                     </tr>
                                                 @empty
                                                 @endforelse

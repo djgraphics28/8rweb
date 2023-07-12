@@ -68,8 +68,12 @@
                                                         <td>{{ $row->project_title }}</td>
                                                         <td>{{ $row->description }}</td>
                                                         <td>{{ $row->client_name }}</td>
-                                                        <td>{{ $row->project_cost }}</td>
-                                                        <td></td>
+                                                        <td>₱{{ number_format($row->project_cost, 2) }}</td>
+                                                        <td>
+                                                            <a href="{{ route('projects.show', $row->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                                            <a href="{{ route('projects.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                            <a class="btn btn-danger btn-sm" data-confirm-delete="true"><i class="fa fa-trash"></i></a>
+                                                        </td>
                                                     </tr>
                                                 @empty
                                                 @endforelse
