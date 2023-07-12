@@ -12,7 +12,9 @@
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="{{ asset('backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css?v=3.2.0') }}">
+
+
 </head>
 <body class="hold-transition login-page">
 
@@ -25,6 +27,6 @@
 <!-- Bootstrap 4 -->
 <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('backend/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('backend/dist/js/adminlte.min.js?v=3.2.0') }}"></script>
 </body>
 </html>
