@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProjectStoreRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -32,9 +34,13 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProjectStoreRequest $request)
     {
-        //
+        $project = new Project();
+        $data = $request->only($project->getFillable());
+        $data['created_by'] = Auth::user()->id;
+        $project->fill($data)->save();
+        return redirect()->route('projects.index')->with('success', 'Project is added successfully!');
     }
 
     /**

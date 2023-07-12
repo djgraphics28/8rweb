@@ -54,30 +54,33 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Status</th>
+                                                    <th>Project Title</th>
+                                                    <th>Description</th>
+                                                    <th>Client Name</th>
+                                                    <th>Project Cost</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
-                                            {{-- <tbody>
+                                            <tbody>
                                                 @forelse ($data['records'] as $row)
                                                     <tr>
                                                         <td>{{ $row->id }}</td>
-                                                        <td>{{ $row->name }}</td>
-                                                        <td>{{ $row->email }}</td>
-                                                        <td></td>
+                                                        <td>{{ $row->project_title }}</td>
+                                                        <td>{{ $row->description }}</td>
+                                                        <td>{{ $row->client_name }}</td>
+                                                        <td>{{ $row->project_cost }}</td>
                                                         <td></td>
                                                     </tr>
                                                 @empty
                                                 @endforelse
-                                            </tbody> --}}
+                                            </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Status</th>
+                                                    <th>Project Title</th>
+                                                    <th>Description</th>
+                                                    <th>Client Name</th>
+                                                    <th>Project Cost</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </tfoot>
